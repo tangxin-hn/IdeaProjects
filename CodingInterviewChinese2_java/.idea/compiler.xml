@@ -9,8 +9,8 @@
         <module name="CodingInterviewChinese2_java" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="CodingInterviewChinese2_java" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="CodingInterviewChinese2_java" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
