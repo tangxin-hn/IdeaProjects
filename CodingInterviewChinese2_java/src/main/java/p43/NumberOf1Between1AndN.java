@@ -12,7 +12,7 @@ public class NumberOf1Between1AndN {
         System.out.println(finfRule(n));
     }
 
-    //方法1：编译每一个数
+    //方法1：遍历每一个数
     public static int traverse(int n){
         int number=0;
         for (int i=1;i<=n;i++) {

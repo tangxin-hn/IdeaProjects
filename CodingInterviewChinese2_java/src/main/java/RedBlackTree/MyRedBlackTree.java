@@ -21,7 +21,7 @@ public class MyRedBlackTree<E extends Comparable<E> >{
     }
 
     public Node<E> SEACHER(Node<E> x,E k) {
-        while (x!=nil && x.e.compareTo(k)==0) {
+        while (x!=nil && x.e.compareTo(k)!=0) {
             if (x.e.compareTo(k)>0) {
                 x = x.left;
             } else {
@@ -121,35 +121,43 @@ public class MyRedBlackTree<E extends Comparable<E> >{
     }
 
     private void RB_INSERT_FIXUP(MyRedBlackTree<E> T, Node<E> z){
+        // 若“父节点存在，并且父节点的颜色是红色”
         while (z.parent.color==Color.red) {
+            //若“父节点”是“祖父节点的左孩子”
             if (z.parent==z.parent.parent.left) {
                 Node<E> y=z.parent.parent.right;
+                // Case 1条件：叔叔节点是红色
                 if (y.color==Color.red) {
                     z.parent.color = Color.black;
                     y.color = Color.black;
                     z.parent.parent.color = Color.red;
                     z = z.parent.parent;
                 } else {
+                    // Case 2条件：叔叔是黑色，且当前节点是右孩子
                     if (z == z.parent.right) {
                         z = z.parent;
                         LEFT_ROTATE(T, z);
                     }
+                    // Case 3条件：叔叔是黑色，且当前节点是左孩子。
                     z.parent.color = Color.black;
                     z.parent.parent.color = Color.red;
                     RIGHT_ROTATE(T, z.parent.parent);
                 }
-            }else{
+            }else{  //若“z的父节点”是“z的祖父节点的右孩子”
                 Node<E> y=z.parent.parent.left;
+                // Case 1条件：叔叔节点是红色
                 if (y.color==Color.red) {
                     z.parent.color = Color.black;
                     y.color = Color.black;
                     z.parent.parent.color = Color.red;
                     z = z.parent.parent;
                 } else {
+                    // Case 2条件：叔叔是黑色，且当前节点是左孩子
                     if (z == z.parent.left) {
                         z = z.parent;
                         RIGHT_ROTATE(T, z);
                     }
+                    // Case 3条件：叔叔是黑色，且当前节点是右孩子。
                     z.parent.color = Color.black;
                     z.parent.parent.color = Color.red;
                     LEFT_ROTATE(T, z.parent.parent);
@@ -161,11 +169,12 @@ public class MyRedBlackTree<E extends Comparable<E> >{
 
     private void RB_DELETE_FIXUP(MyRedBlackTree<E> T, Node<E> x){
         Node<E> w;
-        while (x!=T.nil && x.color==Color.black) {
+        while (x!=T.root && x.color==Color.black) {
             if (x==x.parent.left) {
                 w=x.parent.right;
                 if (w.color==Color.red) {
-                    x.color = Color.black;
+                    w.color = Color.black;
+                    x.parent.color = Color.red;
                     LEFT_ROTATE(T,x.parent);
                     w = x.parent.right;
                 }
@@ -189,6 +198,7 @@ public class MyRedBlackTree<E extends Comparable<E> >{
                 w = x.parent.left;
                 if (w.color==Color.red) {
                     w.color = Color.black;
+                    x.parent.color = Color.red;
                     RIGHT_ROTATE(T,x.parent);
                     w = x.parent.left;
                 }

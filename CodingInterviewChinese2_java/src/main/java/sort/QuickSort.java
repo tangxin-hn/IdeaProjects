@@ -9,17 +9,17 @@ public class QuickSort {
      * 时间复杂：O(nlogn)
      * 空间复杂度：0(1)
      */
-    public static void Sort(int[] number){
-        Recursion(number,0,number.length-1);
+    public static void sort(int[] number){
+        recursion(number,0,number.length-1);
     }
-    private static void Recursion(int[] number, int start, int end) {
+    private static void recursion(int[] number, int start, int end) {
         if (start<end) {
-            int pos = Split(number,start,end);
-            Recursion(number,start,pos-1);
-            Recursion(number,pos+1,end);
+            int pos = partition(number,start,end);
+            recursion(number,start,pos-1);
+            recursion(number,pos+1,end);
         }
     }
-    private static int Split(int[] number,int start,int end) {
+    public static int partition(int[] number,int start,int end) {
         int privotKey = number[start];
         while (start<end) {
             while (end>start && number[end]>=privotKey)

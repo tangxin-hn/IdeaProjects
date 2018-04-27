@@ -1,7 +1,7 @@
 package p5;
 
 public class ReplaceSpaces {
-    void ReplaceBlank(char[] str)
+    void replaceBlank(char[] str)
     {
         if (str==null)
             return;

@@ -9,17 +9,17 @@ public class ShellSort {
      * 空间复杂度：无
      */
 
-    public static void Sort(int[] number) {
+    public static void sort(int[] number) {
         if (number==null)
             return;
         int length = number.length;
         int dk = length/2;
         while (dk>=1) {
-            SecondSort(number,dk);
+            secondSort(number,dk);
             dk = dk/2;
         }
     }
-    private static void SecondSort(int[] number, int dk) {
+    private static void secondSort(int[] number, int dk) {
         for (int i=dk;i<number.length;i++) {
             if (number[i]<number[i-dk]) {
                 int j = i - dk;

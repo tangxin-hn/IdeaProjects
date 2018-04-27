@@ -7,7 +7,7 @@ public class StraightInsertionSort {
      * 时间复杂：O(n^2)
      * 空间复杂度：O(1)
      */
-    public static void Sort(int[] number) {
+    public static void sort(int[] number) {
         if (number==null)
             return;
         int length = number.length;

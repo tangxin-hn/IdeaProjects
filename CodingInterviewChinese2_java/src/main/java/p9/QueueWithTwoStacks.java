@@ -3,12 +3,12 @@ package p9;
 import java.util.Stack;
 
 public class QueueWithTwoStacks {
-    static void Test(char actual, char expected)
+    static void test(char actual, char expected)
     {
         if(actual == expected)
-            System.out.println("Test passed.");
+            System.out.println("test passed.");
         else
-            System.out.println("Test failed.");
+            System.out.println("test failed.");
     }
     public static void main(String[] args) {
         MyQueue<Character> queue = new MyQueue<>();
@@ -23,14 +23,14 @@ public class QueueWithTwoStacks {
             System.out.println(e);
         }
 
-        Test(head, 'a');
+        test(head, 'a');
 
         try {
             head = queue.deleteHead();
         }catch (Exception e) {
             System.out.println(e);
         }
-        Test(head, 'b');
+        test(head, 'b');
 
         queue.appendTail('d');
         try {
@@ -38,7 +38,7 @@ public class QueueWithTwoStacks {
         }catch (Exception e) {
             System.out.println(e);
         }
-        Test(head, 'c');
+        test(head, 'c');
 
         queue.appendTail('e');
         try {
@@ -46,14 +46,14 @@ public class QueueWithTwoStacks {
         }catch (Exception e) {
             System.out.println(e);
         }
-        Test(head, 'd');
+        test(head, 'd');
 
         try {
             head = queue.deleteHead();
         }catch (Exception e) {
             System.out.println(e);
         }
-        Test(head, 'e');
+        test(head, 'e');
     }
 }
 class MyQueue<T> {

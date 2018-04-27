@@ -10,7 +10,7 @@ public class SimpleSelectionSort {
      * 空间复杂度：O(1)
      */
 
-    public static void Sort(int[] number) {
+    public static void sort(int[] number) {
         for (int i=0;i<number.length;i++) {
             int min = i;
             for (int j=i+1;j<number.length;j++) {

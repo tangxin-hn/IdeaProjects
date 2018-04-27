@@ -1,7 +1,7 @@
 package p4;
 
 public class FindInPartiallySortedMatrix {
-    boolean Find(int[][] matrix, int number) {
+    boolean find(int[][] matrix, int number) {
         if (matrix==null)
             return false;
         int rows = matrix.length-1;
@@ -27,7 +27,7 @@ public class FindInPartiallySortedMatrix {
         return false;
     }
 
-    boolean Find2(int[][] matrix, int number) {
+    boolean find2(int[][] matrix, int number) {
         if (matrix==null)
             return false;
         int row = 0;

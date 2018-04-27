@@ -3,7 +3,7 @@ package p8;
 import tools.TreeNode;
 
 public class NextNodeInBinaryTrees {
-    TreeNode GetNext(TreeNode pNode){
+    TreeNode getNext(TreeNode pNode){
         if (pNode==null)
             return null;
         if (pNode.right!=null) {

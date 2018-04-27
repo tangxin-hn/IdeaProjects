@@ -5,12 +5,12 @@ public class Singleton2 {
         System.out.println("An instance of Singleton2 is created.");
     }
 
-    public static void Print()
+    public static void print()
     {
         System.out.println("Singleton2 Print");
     }
 
-    public static Singleton2 Instance() {
+    public static Singleton2 instance() {
         return Nested.instance;
     }
     static class Nested{

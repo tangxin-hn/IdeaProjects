@@ -7,21 +7,21 @@ public class HeapSort {
      * 时间复杂度：O(nlogn)
      * 空间复杂度：O(1)
      */
-    public static void Sort(int[] number){
-        BuildingHeap(number);
+    public static void sort(int[] number){
+        buildingHeap(number);
         for (int i=number.length-1;i>0;i--) {
             int temp = number[i];
             number[i] = number[0];
             number[0] = temp;
-            HeadAdjust(number,0,i);
+            headAdjust(number,0,i);
         }
     }
-    private static void BuildingHeap(int[] number) {
+    private static void buildingHeap(int[] number) {
         for (int i=(number.length-1)/2;i>=0;i--) {
-            HeadAdjust(number,i,number.length);
+            headAdjust(number,i,number.length);
         }
     }
-    private static void HeadAdjust(int[] number, int pos, int length) {
+    private static void headAdjust(int[] number, int pos, int length) {
         int tmp  = number[pos];
         int child = 2*pos+1; //左孩子结点的位置。(i+1 为当前调整结点的右孩子结点的位置)
         while (child < length) {

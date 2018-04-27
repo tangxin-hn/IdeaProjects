@@ -8,19 +8,19 @@ public class MergeSort {
      * 时间复杂度：O(nlogn)
      * 空间复杂度：O(n）
      */
-    public static void Sort(int[] number) {
+    public static void sort(int[] number) {
         int[] temp = new int[number.length];
-        Recursion(number,temp,0,number.length-1);
+        recursion(number,temp,0,number.length-1);
     }
-    private static void Recursion(int[] number,int[] temp,int start,int end) {
+    private static void recursion(int[] number,int[] temp,int start,int end) {
         if (end>start) {
             int middle = (start+end)/2;
-            Recursion(number,temp,start,middle);
-            Recursion(number,temp,middle+1,end);
-            Merge(number,temp,start,middle,end);
+            recursion(number,temp,start,middle);
+            recursion(number,temp,middle+1,end);
+            merge(number,temp,start,middle,end);
         }
     }
-    private static void Merge(int[] number,int[] temp,int start,int middle,int end) {
+    private static void merge(int[] number,int[] temp,int start,int middle,int end) {
         int i,j,k;
         for (i=0,j=start,k=middle+1;j<=middle && k<=end;i++) {
             if (number[j]<=number[k]) {

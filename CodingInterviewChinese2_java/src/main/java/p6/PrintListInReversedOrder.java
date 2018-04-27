@@ -5,9 +5,9 @@ import tools.ListNode;
 import java.util.Stack;
 
 public class PrintListInReversedOrder {
-    void PrintListReversingly_Iteratively(ListNode head){
+    void printListReversingly_Iteratively(ListNode head){
         ListNode temp=head;
-        Stack<ListNode> stack = new Stack<ListNode>();
+        Stack<ListNode> stack = new Stack<>();
         while (temp!=null) {
             stack.push(temp);
             temp = temp.next;

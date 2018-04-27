@@ -7,7 +7,7 @@ public class RadixSort {
      * 时间复杂：O(n(r+d))
      * 空间复杂度：0(1)
      */
-    public static void Sort(int[] number) {
+    public static void sort(int[] number) {
         if (number==null)
             return;
         int max = number[0];
@@ -20,9 +20,9 @@ public class RadixSort {
             maxRadix++;
             max /= 10;
         }
-        SecondSort(number,maxRadix);
+        secondSort(number,maxRadix);
     }
-    private static void SecondSort(int L[],int maxRadix)
+    private static void secondSort(int L[],int maxRadix)
     {
         int length = L.length;
         int m=1,k=0,lsp=0;
@@ -37,12 +37,12 @@ public class RadixSort {
                     lsp = (L[i] / m) % 10; //确定关键字
                 temp[lsp][i] = L[i];
             }
-            CollectElement(L,temp); //收集
+            collectElement(L,temp); //收集
             m=m*10;
             k++;
         }
     }
-    private static void CollectElement(int[] L,int[][] temp) {
+    private static void collectElement(int[] L,int[][] temp) {
         int count=0;
         for (int i=0;i<temp.length;i++) {
             for (int j=0;j<temp[0].length;j++) {

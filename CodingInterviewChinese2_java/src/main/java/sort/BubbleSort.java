@@ -7,7 +7,7 @@ public class BubbleSort {
      * 时间复杂度：O(n^2)
      * 空间复杂度：O(1)
      */
-    public static void Sort(int[] number){
+    public static void sort(int[] number){
         for (int i=1;i<number.length;i++) {
             for (int j=i;j>0;j--) {
                 if (number[j]<number[j-1]) {
