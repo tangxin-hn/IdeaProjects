@@ -1,4 +1,4 @@
-package innerclass;
+package innerclasses;
 
 public class InnerClassTest {
     MyInnerClass my = new MyInnerClass();
